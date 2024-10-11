@@ -1,0 +1,105 @@
+/*
+  // Rady z https://fonts.google.com/
+  // <uniquifier>: Use a unique and descriptive class name
+  // <weight>: Use a value from 300 to 800
+
+.open-sans-<uniquifier> {
+  font-family: "Open Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
+*/
+
+/* vynulování pro různě nastavené prohlížeče */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Zajišťuje, že padding a margin jsou počítány v celkové šířce a výšce */
+}
+
+
+body {
+    font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+    background-color: #f8f9fa;
+    overflow-y: hidden;
+    height: 90vh;
+}
+
+.main-container {
+    max-width: 80rem; /* Nastavení maximální šířky pro desktop */
+    margin: auto; /* Centrování kontejneru */
+    border: 1px solid black; /* Tenký černý rámeček */
+    border-radius: 15px; /* Zakulacené okraje */
+    padding: 20px; /* Padding uvnitř kontejneru */
+    overflow-y: hidden;
+}
+
+.scroll-container {
+    max-height: calc(90vh - 60px); /* Nastavení maximální výšky, aby se vešel do zbytku obrazovky */
+    overflow-y: auto; /* Aktivace vertikálního scrollování */
+    padding-right: 20px; /* Volitelný padding */
+    /*padding-left: 10px; /* Volitelný padding */
+    border: 0;
+    /*border: 1px solid transparent; /* Přidání rámečku (pokud chcete) */
+}
+
+
+.container {
+    max-width: 80rem;
+}
+
+nav {
+    background-color: #FFEDC9; /* Nastavení barvy pozadí */
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    border-bottom: 2px solid #E5C688;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    /* Maximální šířku není třeba zde nastavovat, je to již řízeno .main-container */
+    padding: 0; /* Odstranění paddingu */
+
+    overflow: hidden; /* Skrývá obsah přesahující hranice */
+
+}
+
+nav .navbar-brand {
+    color: green; /* Barva textu */
+    font-weight: 800; /* Tloušťka písma */
+    font-size: 220%;
+}
+
+nav .logo-img {
+    width: 1.8em;
+    height: 1.3em;
+    position: relative;
+
+}
+
+h1 {
+    /* horizontálně vycentrovat */
+    text-align: center;
+    font-size: calc(1.20rem + .8vw);
+    padding-top: 1.2rem;
+}
+
+h2 {
+    font-size: calc(1.10rem + .8vw);
+    padding-top: 1.2rem;
+}
+
+h3 {
+    font-size: calc(1rem + .5vw);
+    padding-top: 1.0rem;
+}
+
+img.demo-img {
+    width: 15rem;
+    height: 15rem;
+    /*margin-bottom: 20px; /* Přidání mezery pod obrázkem pro menší obrazovky */
+}
+
