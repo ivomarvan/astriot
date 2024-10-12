@@ -105,3 +105,7 @@ img.demo-img {
     /*margin-bottom: 20px; /* Přidání mezery pod obrázkem pro menší obrazovky */
 }
 
+#problem-img {
+    width: 10rem;
+    height: 10rem;
+}
