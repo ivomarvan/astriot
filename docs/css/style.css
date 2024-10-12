@@ -67,11 +67,13 @@ nav {
 
 }
 
-nav .navbar-brand {
+
+nav .navbar-brand, .logo-text {
     color: green; /* Barva textu */
     font-weight: 800; /* Tloušťka písma */
     font-size: 220%;
 }
+
 
 nav .logo-img {
     width: 1.8em;
