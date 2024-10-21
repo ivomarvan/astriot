@@ -66,8 +66,9 @@
                 <div class="col-12">
 
                     <h2>Mission</h2>
-                    <p>A <b>concept and library</b> for affordable image processing to <b>extract facial and body pose
-                        data</b>,
+                    <p>A <b>concept and set of libraries</b> for affordable image processing to <b>extract facial and
+                        body pose
+                        data</b> (and the like),
                         providing <b>text outputs throw a API</b> <b>for wide range of </b>assistive technologies and
                         other <b>applications</b>.</p>
 
@@ -155,45 +156,67 @@
                                 after that deny it access to the camera and microphone</b>.</p>
                         </div>
                     </div>
+                    <h2>Project status</h2>
+                    <p>The project is in the early stages of development.
+                        We plan to do the following steps</p>
 
-                    <h2><a href="tx.html" target="_blank"><b>AstriotTx</b> - Mobile application (transmitter)</a></h2>
-                    <div class="row">
-                        <div class="col-9">
-                            <ul>
-                                <li>This is a common application that solves all common problems with image processing
-                                    (generally sensor data processing).
-                                </li>
-                                <li>This data broadcasting application is designed as a simple html page that you can
-                                    open
-                                    on your mobile. No installation required.
-                                    Use the <a href="tx.html" target="_blank">link</a> or QR code to open the page on
-                                    your mobile phone.
-                                </li>
-                                <li>Depending on the type of receiving application, you will be prompted for permission
-                                    to use the camera or microphone.
-                                </li>
-                                <li>Further instructions will already depend on the "data receiver"
-                                    application, most often it will be about selecting a camera (if there are more)
-                                    and setting it to the observed object. Usually on yourself.
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="col-md-3 d-flex justify-content-center align-items-center">
-                            <img src="img/tx_url.png"
-                                 alt="Open mobile application (transmitter) in your mobile browser by the QR code."
-                                 class="img-fluid demo-img">
-                        </div>
-
-                    </div>
-                    <h2>Multiple user applications - <b>receivers</b></h2>
-                    <p>We will now introduce you to several user applications that accept text data.</p>
+                    <h3>Supported programming languages</h3>
                     <ul>
-                        <li><h3><a href="rx_web_complex.html" target="_blank"><b>RxComplexWeb</b> - Test user web application</a></h3>
+                        <li><b>JavaScript</b> - for web applications,</li>
+                        <li><b>C++ Arduino like</b> - for embedded devices (with microprocessor)</li>
+                        <li><b>Python</b></li>
+                        - for a wide range of (desktop) applications
+                    </ul>
+
+                    <h3>Communication API</h3>
+                    <p>We want to design an <b>API</b> that will define the format of the transmitted <b>data</b>
+                        and <b>commands</b> for
+                        communication between the "transmitter" (smartphone) and the "receiver" (application). An
+                        <b>abstract description format</b> will be used to generate the appropriate libraries in the
+                        above
+                        programming languages.</p>
+
+                    <h3>Communication canals</h3>
+                    <p>
+                        In the programming languages mentioned above, we also want to implement parts of the <b>libraries</b>
+                        to support communication between "transmitter" and "receiver" for the following connection
+                        methods:
+                    </p>
+                    <ul>
+                        <li><b>WebRTC</b> (PeerJs) for web applications. All modern browsers support the technology.
+                        </li>
+                        <li><b>Bluetooth</b> for embedded devices. (We will use the <b>Bluetooth Low Energy</b> (BLE)
+                            technology.)
+                        </li>
+                        <li><b>Socket</b> for communication with the server
+                            (via public WiFi, or in case the application creates a WiFi hotspot)
+                        </li>
+                    </ul>
+
+                    <h3>AstriotTx - Mobile application (transmitter)</a></h3>
+                    <ul>
+                        <li>This is a common application that <b>solves all common problems with image processing</b>
+                            (generally sensor data processing).
+                        </li>
+                        <li>This data broadcasting application is designed as a simple <b>html page</b> that you can
+                            open
+                            on your mobile. <b>No installation required.</b> Use the link or QR code to open
+                            the page on your mobile phone.
+                        </li>
+                        <li>Further instructions will already depend on the "data receiver"
+                            application, most often it will be about selecting a camera (if there are more)
+                            and setting it to the observed object. Usually on yourself.
+                        </li>
+                    </ul>
+                    <h3>Sample applications (receivers)</h3>
+
+                    <ul>
+                        <li><h3><b>RxComplexWeb</b> - Test user web application</h3>
                             In your web browser, you can see what processed data your mobile phone sends
                             from the main application.
                             You can open it in any browser - for example on your desktop.
                         </li>
-                        <li><h3><a href="rx_bulb.html" target="_blank"><b>RxBulb</b> - Turn lights on and off using gestures</a></h3>
+                        <li><h3><b>RxBulb</b> - Turn lights on and off using gestures</h3>
                             A simple, cheap hardware application where we will show you how to easily make a piece
                             of hardware that use visual date from your mobile phone. You can turn the light on and
                             off by opening and closing your palm. We'll use a few trivial components worth about $9 in
@@ -214,11 +237,15 @@
                         </li>
                         <li><h3>... your own application</h3></li>
                     </ul>
-                    <p>Have a nice day.</p>
-                </div>
-            </div>
-        </div>
-    </div>
+                    <hr>
+                    <h2>Contacts</h2>
+                    <p>For more information, please contact <a href="mailto:astriot@marvan.cz>">astriot[at]marvan.cz</a><br>
+                        LinkedIn: <a href="https://www.linkedin.com/in/ivo-marvan-637b186/" target="_blank">Ivo Marvan</a>
+                    </p>
+                </div> <!-- col-12 -->
+            </div> <!-- row -->
+        </div> <!-- scroll-container -->
+    </div>  <!-- container -->
 </div>
 <script src="js/main.js"></script>
 </body>
