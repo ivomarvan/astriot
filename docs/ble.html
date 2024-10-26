@@ -61,7 +61,9 @@
                 console.log('Zahajuji vyhledávání BLE zařízení...');
                 // Vyhledání BLE zařízení s použitím plného 128bitového UUID
                 bleDevice = await navigator.bluetooth.requestDevice({
-                    filters: [{ services: ['0000ffe0-0000-1000-8000-00805f9b34fb'] }]
+                    // filters: [{ services: ['0000ffe0-0000-1000-8000-00805f9b34fb'] }]
+                     acceptAllDevices: true,
+                     optionalServices: ['0000ffe0-0000-1000-8000-00805f9b34fb']
                 });
                 console.log('Zařízení vybráno:', bleDevice.name);
 
