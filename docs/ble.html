@@ -58,10 +58,12 @@
 
         document.getElementById('connect').addEventListener('click', async () => {
             try {
+                console.log('Zahajuji vyhledávání BLE zařízení...');
                 // Vyhledání BLE zařízení s použitím plného 128bitového UUID
                 bleDevice = await navigator.bluetooth.requestDevice({
                     filters: [{ services: ['0000ffe0-0000-1000-8000-00805f9b34fb'] }]
                 });
+                console.log('Zařízení vybráno:', bleDevice.name);
 
                 // Připojení k BLE GATT serveru (ESP32)
                 const server = await bleDevice.gatt.connect();
