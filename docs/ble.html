@@ -46,8 +46,8 @@
         let characteristic;
 
         // UUID služby a charakteristiky musí odpovídat tomu, co máš na ESP32
-        const serviceUuid = 'ffe0';
-        const characteristicUuid = 'ffe1';
+        const serviceUuid = '0000ffe0-0000-1000-8000-00805f9b34fb';
+        const characteristicUuid = '0000ffe1-0000-1000-8000-00805f9b34fb';
 
         if ('bluetooth' in navigator) {
           console.log("Web Bluetooth API is supported.");
@@ -58,41 +58,45 @@
 
         document.getElementById('connect').addEventListener('click', async () => {
             try {
-                console.log('Zahajuji vyhledávání BLE zařízení...');
                 // Vyhledání BLE zařízení s použitím plného 128bitového UUID
                 bleDevice = await navigator.bluetooth.requestDevice({
-                    // filters: [{ services: ['0000ffe0-0000-1000-8000-00805f9b34fb'] }]
+                    // filters: [{ services: [serviceUuid] }]
                      acceptAllDevices: true,
-                     optionalServices: ['0000ffe0-0000-1000-8000-00805f9b34fb']
+                     optionalServices: [serviceUuid]
                 });
                 console.log('Zařízení vybráno:', bleDevice.name);
 
                 // Připojení k BLE GATT serveru (ESP32)
                 const server = await bleDevice.gatt.connect();
-                const service = await server.getPrimaryService('0000ffe0-0000-1000-8000-00805f9b34fb');
-                characteristic = await service.getCharacteristic('0000ffe1-0000-1000-8000-00805f9b34fb');
+                const service = await server.getPrimaryService(serviceUuid);
+                characteristic = await service.getCharacteristic(characteristicUuid);
                 console.log('Connected to ESP32');
             } catch (error) {
                 console.error('Connection failed', error);
             }
         });
 
+        // Global variable to maintain the Promise chain
+        let writePromise = Promise.resolve();
+
         async function sendData(txtData) {
             if (characteristic) {
                 const encoder = new TextEncoder();
                 const data = encoder.encode(txtData);
-                try {
-                    // Odeslání dat
-                    await characteristic.writeValue(data);
-                    console.log(txtData, ' sent to ESP32');
-                } catch (error) {
-                    console.error('Failed to send data', error);
-                }
+
+                // Chain write operations to ensure sequential execution
+                writePromise = writePromise.then(async () => {
+                    try {
+                        await characteristic.writeValue(data);
+                        console.log(txtData, ' sent to ESP32');
+                    } catch (error) {
+                        console.error('Failed to send data', error);
+                    }
+                });
             } else {
                 console.log('Not connected to a device');
             }
         }
-
 
         import {
             GestureRecognizer,
@@ -104,6 +108,7 @@
         let fpsElement = document.getElementById('fps');
         let lastFrameTime = performance.now();
         let frameCount = 0;
+        let lastGesture = '🤷';
 
         const gestures = {
             'Thumb_Up': '👍',
@@ -164,8 +169,11 @@
             if (results.gestures && results.gestures.length > 0) {
                 const gesture = results.gestures[0][0].categoryName;
                 console.log(results.gestures[0][0].categoryName);
-                outputElement.textContent = gestures[gesture] || '🤷';
-                sendData(gesture);
+                if (gesture !== lastGesture) {
+                    lastGesture = gesture;
+                    outputElement.textContent = gestures[gesture] || '🤷';
+                    sendData(gesture);
+                }
             }
 
             window.requestAnimationFrame(predictWebcam);
