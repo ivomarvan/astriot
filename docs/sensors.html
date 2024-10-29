@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detekce senzorů zařízení</title>
+</head>
+<body>
+    <h1>Seznam podporovaných senzorů:</h1>
+    <ul id="sensor-list"></ul>
+
+    <script>
+        function addSensorStatus(sensorName, isSupported) {
+            const sensorList = document.getElementById("sensor-list");
+            const listItem = document.createElement("li");
+            listItem.textContent = `${sensorName}: ${isSupported ? "Podporován" : "Nepodporován"}`;
+            sensorList.appendChild(listItem);
+        }
+
+        // Kontrola akcelerometru a gyroskopu
+        addSensorStatus("Accelerometer", 'DeviceMotionEvent' in window);
+        addSensorStatus("Gyroscope", 'DeviceOrientationEvent' in window);
+
+        // Kontrola světelného senzoru
+        if ('AmbientLightSensor' in window) {
+            addSensorStatus("Ambient Light Sensor", true);
+        } else {
+            addSensorStatus("Ambient Light Sensor", false);
+        }
+
+        // Kontrola proximity senzoru
+        if ('ProximitySensor' in window) {
+            addSensorStatus("Proximity Sensor", true);
+        } else {
+            addSensorStatus("Proximity Sensor", false);
+        }
+
+        // Kontrola geolokace
+        addSensorStatus("Geolocation", 'geolocation' in navigator);
+
+        // Kontrola orientace (Orientation Sensor API)
+        if ('AbsoluteOrientationSensor' in window) {
+            addSensorStatus("Orientation Sensor", true);
+        } else {
+            addSensorStatus("Orientation Sensor", false);
+        }
+
+        // Kontrola podpory kamery
+        navigator.mediaDevices?.enumerateDevices().then((devices) => {
+            const hasCamera = devices.some(device => device.kind === "videoinput");
+            addSensorStatus("Camera", hasCamera);
+        }).catch(() => {
+            addSensorStatus("Camera", false);
+        });
+
+    </script>
+</body>
+</html>
