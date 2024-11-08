@@ -1,5 +1,5 @@
 // MediaPipeProcessor.js
-import ImageProcessor from '/js/imageProcessor/ImageProcessor.js';
+import ImageProcessor from './js/imageProcessor/ImageProcessor.js';
 import vision from "https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.3";
 const { FilesetResolver, DrawingUtils } = vision;
 

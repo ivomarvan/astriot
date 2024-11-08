@@ -3,12 +3,12 @@
 import { createApp, reactive } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js';
 
 import { getDebugModeFromUrl } from './utils.js';
-import Control from '/js/control/Control.js';
+import Control from './js/control/Control.js';
 import CamerasControl from "./js/control/CamerasControl.js";
-import VideoControl from '/js/control/VideoControl.js';
-import VideoLoop from '/js/video/VideoLoop.js';
-import FpsCounter from '/js/video/FpsCounter.js';
-import ImageProcessorStorage from '/js/imageProcessor/ImageProcessorStorage.js';
+import VideoControl from './js/control/VideoControl.js';
+import VideoLoop from './js/video/VideoLoop.js';
+import FpsCounter from './js/video/FpsCounter.js';
+import ImageProcessorStorage from './js/imageProcessor/ImageProcessorStorage.js';
 
 
 const imgProcStorage = new ImageProcessorStorage(

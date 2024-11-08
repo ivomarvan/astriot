@@ -8,7 +8,7 @@
 import Control from "./js/control/Control.js";
 import VideoLoop from "./js/video/VideoLoop.js";
 import ImageProcessor from "./js/imageProcessor/ImageProcessor.js";
-import ImageProcessorStorage from '/js/imageProcessor/ImageProcessorStorage.js';
+import ImageProcessorStorage from './js/imageProcessor/ImageProcessorStorage.js';
 
 /**
  * @class VideoControl

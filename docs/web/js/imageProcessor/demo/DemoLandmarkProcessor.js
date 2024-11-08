@@ -1,5 +1,5 @@
 // DemoLandmarkProcessor.js
-import ImageProcessor from '/js/imageProcessor/ImageProcessor.js';
+import ImageProcessor from './js/imageProcessor/ImageProcessor.js';
 
 export default class DemoLandmarkProcessor extends ImageProcessor {
     constructor(options = {}) {
