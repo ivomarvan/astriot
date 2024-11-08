@@ -1,5 +1,5 @@
 // FaceLandmarkProcessor.js
-import MediaPipeProcessor from "/js/imageProcessor/mediapipe/MediaPipeProcessor.js";
+import MediaPipeProcessor from "./js/imageProcessor/mediapipe/MediaPipeProcessor.js";
 import vision from "https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.3";
 const { FaceLandmarker } = vision;
 

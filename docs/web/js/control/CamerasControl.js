@@ -1,6 +1,6 @@
 // /js/control/CamerasControl.js
-import Control from "/js/control/Control.js";
-import Cameras from "/js/video/Cameras.js";
+import Control from "./js/control/Control.js";
+import Cameras from "./js/video/Cameras.js";
 
 /**
  * @module CamerasControl

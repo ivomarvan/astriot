@@ -4,7 +4,7 @@ import { createApp, reactive } from 'https://unpkg.com/vue@3/dist/vue.esm-browse
 
 import { getDebugModeFromUrl } from './utils.js';
 import Control from '/js/control/Control.js';
-import CamerasControl from "/js/control/CamerasControl.js";
+import CamerasControl from "./js/control/CamerasControl.js";
 import VideoControl from '/js/control/VideoControl.js';
 import VideoLoop from '/js/video/VideoLoop.js';
 import FpsCounter from '/js/video/FpsCounter.js';
@@ -13,12 +13,12 @@ import ImageProcessorStorage from '/js/imageProcessor/ImageProcessorStorage.js';
 
 const imgProcStorage = new ImageProcessorStorage(
     [
-        { name: "Face Landmarks", className: "FaceLandmarkProcessor", dir: "/js/imageProcessor/mediapipe/" },
-        { name: "Hands Landmarks", className: "HandsLandmarkProcessor", dir: "/js/imageProcessor/mediapipe/" },
-        { name: "Pose Landmarks", className: "PoseLandmarkProcessor", dir: "/js/imageProcessor/mediapipe/" },
-        { name: "Hands Gestures", className: "HandsGesturesProcessor", dir: "/js/imageProcessor/mediapipe/" },
-        //{ name: "Holistic Landmarks", className: "HolisticLandmarkProcessor", dir: "/js/imageProcessor/mediapipe/" },
-        //{ name: "Demo Landmarks", className: "DemoLandmarkProcessor", dir: "/js/ImageProcessor/demo" },
+        { name: "Face Landmarks", className: "FaceLandmarkProcessor", dir: "./js/imageProcessor/mediapipe/" },
+        { name: "Hands Landmarks", className: "HandsLandmarkProcessor", dir: "./js/imageProcessor/mediapipe/" },
+        { name: "Pose Landmarks", className: "PoseLandmarkProcessor", dir: "./js/imageProcessor/mediapipe/" },
+        { name: "Hands Gestures", className: "HandsGesturesProcessor", dir: "./js/imageProcessor/mediapipe/" },
+        //{ name: "Holistic Landmarks", className: "HolisticLandmarkProcessor", dir: "./js/imageProcessor/mediapipe/" },
+        //{ name: "Demo Landmarks", className: "DemoLandmarkProcessor", dir: "./js/ImageProcessor/demo" },
     ],
     80 // maxCostPercents
 );
