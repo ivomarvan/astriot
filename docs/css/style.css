@@ -31,7 +31,6 @@ body {
 }
 
 
-
 .main-container {
     margin: auto; /* Centrování kontejneru */
     border: 1px solid black; /* Tenký černý rámeček */
@@ -156,11 +155,7 @@ img.qr-img {
     color: gray;
 }
 
-/* Add rounded borders to canvas to match textarea */
-#cameraCanvas {
-    border: 1px solid #ced4da; /* Match Bootstrap's default border color */
-    border-radius: 0.25rem;    /* Match Bootstrap's default border radius */
-}
+
 
 /* Style for message output */
 #messageOutput {
@@ -178,6 +173,15 @@ img.qr-img {
     display: block; /* Pro odstranění mezery pod canvasem (běžná věc u inline-block elementů) */
 }
 
+/* Add rounded borders to canvas to match textarea */
+#cameraCanvas {
+    border: 6px solid #ced4da; /* Match Bootstrap's default border color */
+    border-radius: 0.25rem;    /* Match Bootstrap's default border radius */
+}
+
+#cameraCanvas.canvas-border {
+    border-color:green; /* Match Bootstrap's default border color */
+}
 
 /* Optional: Adjust switch size if needed */
 .form-switch .form-check-input {

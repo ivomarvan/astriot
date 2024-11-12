@@ -133,7 +133,10 @@
                         <div class="col">
                             <div id="visualOutput">
                                 <canvas id="cameraCanvas" ref="cameraCanvas"
-                                    :class="{ 'disabled-container': !switchReactiveVars.appOn }"></canvas>
+                                :class="[
+                                { 'disabled-container': !switchReactiveVars.appOn },
+                                { 'canvas-border': switchReactiveVars.canvasBorder }
+                              ]"></canvas>
                             </div>
                         </div>
                     </div> <!-- End of Visual Output Row -->
