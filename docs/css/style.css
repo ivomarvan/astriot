@@ -75,6 +75,9 @@ nav .navbar-brand, .logo-text {
     font-size: 220%;
 }
 
+.fas, nav .navbar-brand, .logo-text {
+    color: green;
+}
 
 nav .logo-img {
     width: 1.8em;
@@ -116,3 +119,81 @@ img.qr-img {
     width: 10rem;
     height: 10rem;
 }
+
+/* V souboru style.css */
+#connectionIndicator {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+#connectionIndicator {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.connected {
+    background-color: green;
+}
+
+.disconnected {
+    background-color: red;
+}
+
+/* Style for icons based on state */
+.astriot-text-success {
+    color: green;
+}
+
+.astriot-text-muted {
+    /*color: #A3FBA3; /* Bootstrap's muted color */
+    color: gray;
+}
+
+/* Add rounded borders to canvas to match textarea */
+#cameraCanvas {
+    border: 1px solid #ced4da; /* Match Bootstrap's default border color */
+    border-radius: 0.25rem;    /* Match Bootstrap's default border radius */
+}
+
+/* Style for message output */
+#messageOutput {
+
+    overflow-y: auto;
+    border: 1px solid #ced4da; /* Match Bootstrap's default border color */
+    padding: 10px;
+    border-radius: 0.25rem;    /* Match Bootstrap's default border radius */
+    background-color: #f9f9f9;
+}
+
+#cameraCanvas {
+    width: 100%; /* Šířka bude maximální uvnitř rodiče */
+    height: auto; /* Automatická výška založená na šířce */
+    display: block; /* Pro odstranění mezery pod canvasem (běžná věc u inline-block elementů) */
+}
+
+
+/* Optional: Adjust switch size if needed */
+.form-switch .form-check-input {
+    width: 2em;
+    height: 1em;
+    padding-top: 20px;
+}
+
+/* CSS pro změnu barvy přepínače na zelenou při zapnutí */
+.form-check-input:checked {
+    background-color: green;
+    /* border-color: green; */
+
+}
+
+.disabled-container {
+    opacity: 0.5; /* Zeslabení barvy pro vizuální efekt */
+    /* pointer-events: none; /* Zakáže klikání na všechny obsažené prvky */
+}
+
+
+
