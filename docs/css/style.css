@@ -25,9 +25,12 @@ body {
     font-family: "Open Sans", sans-serif;
     font-optical-sizing: auto;
     background-color: #f8f9fa;
-    overflow-y: hidden;
-    height: 90vh;
+    overflow-y: hidden; 
+    /* height: 90vh; */
+     /*padding-top: calc(3.5rem + 20px); /* Adjust the value to match the maximum height of your navbar */
 }
+
+
 
 .main-container {
     margin: auto; /* Centrování kontejneru */
