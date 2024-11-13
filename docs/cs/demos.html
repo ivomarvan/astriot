@@ -69,7 +69,14 @@
     </div> <!-- main-container -->
     <script>
         const currentUrl = new URL(window.location.href);
-        const url = currentUrl.origin + '/rxtx';
+        console.log(currentUrl);
+        let url;
+        if (currentUrl.hostname.includes('localhost')) {
+            url = currentUrl.origin + '/rxtx';
+        } else {
+            url = currentUrl.origin + '/astriot/rxtx';
+        }
+     
         var qrcode = new QRCode("rxtx-qrcode", url);
         const rxtx_a = document.getElementById("rxtx-url");
         rxtx_a.href = url;
