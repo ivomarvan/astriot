@@ -88,6 +88,23 @@ nav .logo-img {
 
 }
 
+nav .lang-switch {
+    position: absolute; /* Umístění relativně k nejbližšímu pozicovanému rodiči */
+    top: 10px; /* Posun od horního okraje */
+    right: 10px; /* Posun od pravého okraje */
+}
+
+nav .lang-switch a {
+    font-size: 34px; /* Zvětšení velikosti vlajky */
+    text-decoration: none; /* Odebrání podtržení odkazu */
+}
+
+nav .lang-switch a:hover {
+    transform: scale(1.2); /* Zvýraznění vlajky při přejetí myší */
+    transition: transform 0.2s ease-in-out; /* Animace zvětšení */
+}
+
+
 h1 {
     /* horizontálně vycentrovat */
     text-align: center;
@@ -202,5 +219,35 @@ img.qr-img {
     /* pointer-events: none; /* Zakáže klikání na všechny obsažené prvky */
 }
 
+/* Kontejner pro obsah při nepřístupné kameře */
+.no-camera-access {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+  
+  /* Styl ikony přeškrtnuté kamery */
+  .icon-container i {
+    font-size: 10rem; /* Velikost ikony */
+    color: #dc3545; /* Červená barva pro ikonu (Bootstrap 'danger' barva) */
+  }
+  
+  /* Styl tlačítka pro obnovení stránky */
+  .reload-button {
+    font-size: 3rem; /* Velikost ikony uvnitř tlačítka */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+  }
+  
 
-
+  /* Styl textu s chybovou zprávou */
+  .error-message {
+    margin-top: 1rem;
+    color: #721c24; /* Tmavě červená barva pro text (Bootstrap 'danger' text) */
+    font-size: 1.2rem;
+    text-align: center;
+  }

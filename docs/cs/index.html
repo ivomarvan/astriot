@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Astriot</title>
+    <!-- SEO Meta Tagy -->
+    <meta name="description"
+        content="Koncept a sada knihoven pro cenově dostupné zpracování obrazu za účelem extrakce dat o obličejových a tělesných pozicích, poskytující textové výstupy prostřednictvím API pro širokou škálu asistivních technologií a dalších aplikací.">
+    <meta name="keywords"
+        content="zpracování obrazu, rozpoznávání obličeje, detekce tělesné pozice, asistivní technologie, IoT, Astriot">
+    <meta name="author" content="Astriot - Ivo Marvan">
+
+    <!-- Open Graph Meta Tagy -->
+    <meta property="og:title" content="Astriot">
+    <meta property="og:description"
+        content="Koncept a sada knihoven pro cenově dostupné zpracování obrazu za účelem extrakce dat o obličejových a tělesných pozicích, poskytující textové výstupy prostřednictvím API pro širokou škálu asistivních technologií a dalších aplikací.">
+    <meta property="og:image" content="/img/favicon/android-chrome-512x512.png">
+    <meta property="og:url" content="https://ivomarvan.github.io/astriot/">
+    <meta property="og:type" content="website">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Favicon odkazy -->
+    <link rel="icon" type="image/png" sizes="16x16" href="/astriot/img/favicon/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/astriot/img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/astriot/img/favicon/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/astriot/img/favicon/android-chrome-512x512.png">
+    <link rel="apple-touch-icon" href="/astriot/img/favicon/apple-touch-icon.png">
+    <link rel="manifest" href="/astriot/img/favicon/site.webmanifest">
+    <link rel="shortcut icon" href="/astriot/img/favicon/favicon.ico">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700|Ropa+Sans&display=swap" rel="stylesheet">
+
+    <!-- CSS odkazy -->
+    <link href="/astriot/css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="main-container">
+        <nav class="navbar navbar-expand-lg fixed-top container">
+            <div class="container justify-content-center position-relative"> <!-- Přidání 'position-relative' -->
+                <a class="navbar-brand" href="#">
+                    <img class="logo-img" src="/astriot/img/favicon/android-chrome-192x192.png" alt="Astriot">
+                </a>
+                <span class="logo-text">Astriot</span>
+                <span class="lang-switch">
+                    <a href="../en/" title="English">🇺🇸</a>
+                </span>
+            </div>
+        </nav>
+        <div class="container" style="margin-top: 3.5rem; padding: 0;">
+            <div class="scroll-container">
+                <div class="row">
+                    <div class="col-12"></div>
+                    <h2>Mise<!--Poslání--></h2>
+                    <p> <b>Koncept a knihovny</b> pro cenově dostupné zpracování obrazu, umožňující extrakci <b>dat o
+                            obličejových a tělesných pozicích</b>,
+                        které poskytují <b>textové výstupy přes API</b> pro široké využití v asistivních technologiích a
+                        dalších aplikacích.
+
+                    <h2>Problém</h2>
+                    <div class="row">
+                        <div class="col-md-3 d-flex justify-content-center align-items-center">
+                            <img src="/astriot/img/problems.png" alt="Spousta různých specifických úkolů."
+                                class="img-fluid demo-img" id="problem-img">
+                        </div>
+                        <div class="col-md-9">
+                            <p>Vývoj asistivních technologií je <b>nákladný</b>, protože každý jedinec s postižením má
+                                <b>unikátní potřeby</b>.
+                            </p>
+                            <p>Například u pacientů se syndromem uzamčení (kdy nemohou přímo komunikovat) lze
+                                identifikovat personalizované pohybové možnosti, jako je používání úst, rukou nebo
+                                podobných metod. Aplikace také musí zohlednit specifické požadavky, včetně omezení
+                                rozsahu pohybu, nekontrolovaných pohybů (tiků) a dalších faktorů.</p>
+                            <p>Také speciální hardwarové řešení pro zpracování obrazu, nemusí být levné.</p>
+                        </div>
+                    </div>
+
+                    <h2>Řešení</h2>
+                    <p>Rozdělme mnoho specializovaných úkolů na jejich <b>společnou složku</b> a <b>zbývající
+                            části</b>. Pro <b>hardware</b> použijeme zařízení, která <b>uživatelé již vlastní</b> nebo
+                        mohou získat cenově dostupně.</p>
+                    <div class="row">
+                        <div class="col-md-9">
+                            Konkrétně to znamená:
+                            <ul>
+                                <li>Použijeme <b>sjednocený software</b> pro zachycení dat o obličejových a tělesných
+                                    pozicích, gestech, zvucích atd.</li>
+                                <li>Tento software bude <b>běžet na chytrém telefonu</b>, využívající jeho procesor pro
+                                    zpracování obrazu a zvuku, stejně jako jeho kameru a/nebo mikrofon. Může také
+                                    potenciálně využívat další senzory jako GPS, akcelerometr, gyroskop, světelné
+                                    senzory atd.</li>
+                                <li>Definujeme <b>API</b> (Application Programming Interface), které mohou ostatní
+                                    vývojáři použít k vytváření svých aplikací. API poskytne <b>proud textových dat</b>.
+                                </li>
+                                <li>Představíme <b>několik ukázkových aplikací</b>, abychom demonstrovali celý koncept
+                                    využití dat z API.</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-3 d-flex justify-content-center align-items-center">
+                            <img src="/astriot/img/solution.png" alt="Mobilní aplikace poskytuje textová data dalším aplikacím."
+                                class="img-fluid demo-img">
+                        </div>
+                    </div>
+
+                    <h2>Bezpečnost a etika</h2>
+                    <div class="row">
+                        <div class="col-md-3 d-flex justify-content-center align-items-center">
+                            <img src="/astriot/img/safe.jpg"
+                                alt="Mezi aplikacemi nikdy nepřenášíme video a audio data. Stručně řečeno, to znamená, že jsou přenášena stejná data, ať jste oblečeni nebo ne."
+                                class="img-fluid demo-img">
+                        </div>
+                        <div class="col-md-9">
+                            <p><b>Nikdy nepřenášíme video a audio data mezi aplikacemi</b>.</p>
+                            <p>Všechna data jsou přenášena pouze jako obecné <b>textové informace</b>. Například 2D
+                                souřadnice jednotlivých kloubů ruky nebo textový popis gesta (například "otevřená dlaň"
+                                nebo "pěst").</p>
+                            <p>Účelem projektu je zveřejnit celé API (tj. podrobný popis datového formátu) - připravené
+                                pro uživatelské aplikace. <b>Kdokoliv si může ověřit, jaké informace jsou přenášeny</b>.
+                            </p>
+                            <p>Stručně řečeno, to znamená, že jsou přenášena stejná data, ať jste oblečeni nebo ne.</p>
+                            <p>Pokud aplikaci stále nevěříte, <b>můžete ji otestovat</b> v bezpečném prostředí <b>a poté
+                                    jí odepřít přístup ke kameře a mikrofonu</b>.</p>
+                        </div>
+                    </div>
+                    <h2>Stav projektu</h2>
+                    <p>Projekt je v raných fázích vývoje. Plánujeme následující kroky</p>
+
+                    <h3>Podporované programovací jazyky</h3>
+                    <ul>
+                        <li><b>JavaScript</b> - pro webové aplikace,</li>
+                        <li><b>C++ Arduino</b> - pro vestavěná zařízení (s mikroprocesorem)</li>
+                        <li><b>Python</b> - pro širokou škálu (desktopových) aplikací</li>
+                    </ul>
+
+                    <h3>Komunikační API</h3>
+                    <p>Chceme navrhnout <b>API</b>, které definuje formát přenášených <b>dat</b> a <b>příkazů</b> pro
+                        komunikaci mezi "vysílačem" (chytrý telefon) a "přijímačem" (aplikace). <b>Abstraktní formát
+                            popisu</b> bude použit k vygenerování příslušných knihoven ve výše uvedených programovacích
+                        jazycích.</p>
+
+                    <h3>Komunikační kanály</h3>
+                    <p>Ve výše uvedených programovacích jazycích chceme také implementovat části <b>knihoven</b> pro
+                        podporu komunikace mezi "vysílačem" a "přijímačem" pro následující způsoby připojení:</p>
+                    <ul>
+                        <li><b>WebRTC</b> (PeerJs) pro webové aplikace. Všechny moderní prohlížeče tuto technologii
+                            podporují.</li>
+                        <li><b>Bluetooth</b> pro vestavěná zařízení. (Použijeme technologii <b>Bluetooth Low Energy</b>
+                            (BLE).)</li>
+                        <li><b>Socket</b> pro komunikaci se serverem (přes veřejné WiFi, nebo v případě, že aplikace
+                            vytvoří WiFi hotspot)</li>
+                    </ul>
+
+                    <h3>AstriotTx - Mobilní aplikace (vysílač)</h3>
+                    <ul>
+                        <li>Jedná se o společnou aplikaci, která <b>řeší všechny běžné problémy se zpracováním
+                                obrazu</b> (obecně zpracování dat ze senzorů).</li>
+                        <li>Tato aplikace pro vysílání dat je navržena jako jednoduchá <b>html stránka</b>, kterou
+                            můžete otevřít na svém mobilu. <b>Není nutná žádná instalace.</b> Pro otevření stránky na
+                            mobilním telefonu použijte odkaz nebo QR kód.</li>
+                        <li>Další pokyny již budou záviset na aplikaci "přijímače dat", nejčastěji půjde o výběr kamery
+                            (pokud jich je více) a nastavení na pozorovaný objekt. Obvykle na sebe sama.</li>
+                    </ul>
+                    <h3>Ukázkové aplikace (přijímače)</h3>
+
+                    <ul>
+                        <li>
+                            <h3><b>RxComplexWeb</b> - Testovací uživatelská webová aplikace</h3>
+                            Ve svém webovém prohlížeči můžete vidět, jaká zpracovaná data váš mobilní telefon odesílá z
+                            hlavní aplikace. Můžete ji otevřít v jakémkoli prohlížeči - například na svém počítači.
+                        </li>
+                        <li>
+                            <h3><b>RxBulb</b> - Zapínání a vypínání světel pomocí gest</h3>
+                            Jednoduchá, levná hardwarová aplikace, kde vám ukážeme, jak snadno vytvořit zařízení, které
+                            využívá vizuální data z vašeho mobilního telefonu. Světlo můžete zapínat a vypínat
+                            otevíráním a zavíráním dlaně. Použijeme několik triviálních komponent v celkové hodnotě asi
+                            9 dolarů.
+                            <br>
+                            Také ukážeme, jak tuto aplikaci upravit, abyste mohli ovládat světlo mrkáním.
+                        </li>
+                        <li>
+                            <h3><b>RxLedDisplay</b> - Komplexní aplikace s LED displejem</h3>
+                            Ukážeme různé způsoby využití textových dat z mobilu pomocí 16x16 RGB LED matice. Data
+                            přijímáme a zpracováváme pomocí levného čipu ESP32.
+                        </li>
+                        <li>
+                            <h3><b>RxMouseButtons</b> - Ovládání prezentace PowerPoint pomocí gest rukou</h3>
+                            Ukážeme úpravu bezdrátové počítačové myši tak, aby její pravé a levé tlačítko bylo ovládáno
+                            gesty. Při připojení k jakémukoli počítači můžeme efektivně přecházet mezi jednotlivými
+                            snímky prezentace pomocí gest.
+                        </li>
+                        <li>
+                            <h3>... vaše vlastní aplikace</h3>
+                        </li>
+                    </ul>
+                    <hr>
+                    <h2>Kontakty</h2>
+                    <p>Pro více informací prosím kontaktujte <a
+                            href="mailto:astriot@marvan.cz">astriot[at]marvan.cz</a><br>
+                        LinkedIn: <a href="https://www.linkedin.com/in/ivo-marvan-637b186/" target="_blank">Ivo
+                            Marvan</a>
+                    </p>
+                </div> <!-- col-12 -->
+            </div> <!-- row -->
+        </div> <!-- scroll-container -->
+    </div> <!-- container -->
+    </div>
+</body>
+
+</html>
