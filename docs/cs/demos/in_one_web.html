@@ -30,60 +30,40 @@
 </head>
 
 <body>
-    <div class="main-container">
+    <div id="app" class="main-container">
         <nav class="navbar navbar-expand-lg fixed-top container">
             <div class="container justify-content-center position-relative"> <!-- Přidání 'position-relative' -->
                 <a class="navbar-brand" href="#">
                     <img class="logo-img" src="/astriot/img/favicon/android-chrome-192x192.png" alt="Astriot">
                 </a>
-                <span class="logo-text">Astriot - příklady (dema)</span>
-                <!--
-                <span class="lang-switch">
-                    <a href="../en/demos.html" title="English">🇺🇸</a>
-                </span>
-                -->
+                <span class="logo-text">Astriot InOneWeb</span>
             </div>
         </nav>
-        <div class="container" style="margin-top: 3.5rem; padding: 0;">
+        <div class="container page-container">
             <div class="scroll-container">
-                <h1>Astriot - seznam příkladů (dema)</h1>
-                
-                <h2>ComplexWeb</h2>
-                
+                <h2>Příklad InOneWeb</h2>
                 <h3>Popis</h3>
                 <p>Živá ukázka různých modelů pro zpracování obrazu v jedné webové stránce.</p>
-                <p>Je třeba otevřít odkaz v moderním prohlížeči na zařízení, 
-                    které má dostupnou kameru (např. na mobilním telefonu nebo tabletu a pod.).</p>
-                    <p>Přístup ke kameře je třeba potvrdit</p>
-                    <h3>Spojení</h3>
-                <p>Není spojeno s žádnou jinou aplikací.</p>
-                <h3>Odkaz</h3> 
-                <a id="rxtx-url" href="" target="_blank"></a>
-                <a id="rxtx-url-qr" href="" target="_blank">
+                <ul>
+                    <li>je třeba otevřít odkaz v <b>moderním prohlížeči</b> na zařízení,
+                        které má <b>dostupnou kameru</b> (např. na mobilním telefonu nebo tabletu a pod.)</li>
+                    <li>je třeba povolit přístup ke kameře</li>
+                    <li>není spojeno s žádnou jinou aplikací</li>
+                </ul>
+                <h3>Odkaz pro InOneWeb</h3>
+
+                <a id="rxtx-url-qr" :href="rxtxUrl" target="_blank">
                     <div id="rxtx-qrcode" class="qrcode"></div>
                 </a>
+                <a id="rxtx-url" :href="rxtxUrl" target="_blank">{{rxtxUrl}}</a>
                 <hr>
-                Zpět na <a href="/astriot/cs/index.html">úvodní stránku</a>
+                <p>Zpět na <a href="/astriot/cs/">úvodní stránku</a></p>
+                <p>Zpět na <a href="/astriot/cs/demos/">seznam příkladů</a></p>
             </div> <!-- scroll-container -->
         </div> <!-- container -->
     </div> <!-- main-container -->
-    <script>
-        const currentUrl = new URL(window.location.href);
-        console.log(currentUrl);
-        let url;
-        if (currentUrl.hostname.includes('localhost')) {
-            url = currentUrl.origin + '/rxtx';
-        } else {
-            url = currentUrl.origin + '/astriot/rxtx';
-        }
-     
-        var qrcode = new QRCode("rxtx-qrcode", url);
-        const rxtx_a = document.getElementById("rxtx-url");
-        rxtx_a.href = url;
-        rxtx_a.innerText = url;
-        const rxtx_a_qr = document.getElementById("rxtx-url-qr");
-        rxtx_a_qr.href = url;
-    </script>
+    <!-- Vue.js Application Script -->
+    <script src="/astriot/js/launchers/in_one_web_launcher.js" type="module"></script>
 </body>
 
 </html>
