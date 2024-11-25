@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Speech Synthesis Test</title>
+</head>
+
+<body>
+    <button onclick="speak()">Speak Czech</button>
+
+    <script>
+        if ('speechSynthesis' in window) {
+            console.log("Speech Synthesis API is supported.");
+        } else {
+            console.error("Speech Synthesis API is not supported in this browser.");
+        }
+
+        function speak() {
+            const text = "Ahoj, jak se máš?";
+            const utterance = new SpeechSynthesisUtterance(text);
+            utterance.lang = 'en-US';
+
+            utterance.onstart = () => {
+                console.log("Speech synthesis started.");
+            };
+
+            utterance.onerror = (event) => {
+                console.error("Speech synthesis error:", event.error);
+            };
+
+            utterance.onend = () => {
+                console.log("Speech synthesis ended.");
+            };
+
+            window.speechSynthesis.speak(utterance);
+        }
+    </script>
+</body>
+
+</html>

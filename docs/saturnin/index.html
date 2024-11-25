@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <title>Speech Control App</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Vue.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+</head>
+<body>
+    <div id="app">
+        <!-- Status Indicator -->
+        <div :class="['status-indicator', currentState]">
+            {{ statusMessage }}
+        </div>
+
+        <!-- Bluetooth Button -->
+        <button @click="onBluetoothClick">{{ bluetoothButtonText }}</button>
+
+        <!-- Heard Text -->
+        <div>
+            <label for="heard">slyšeno:</label>
+            <input type="text" id="heard" v-model="heardText" readonly>
+        </div>
+
+        <!-- Executing Command Text -->
+        <div>
+            <label for="executing">provádím:</label>
+            <input type="text" id="executing" v-model="executingText" readonly>
+        </div>
+        
+        <button @click="startSpeechRecognitionManual">Start Speech Recognition</button>
+
+
+        <!-- Modal for Initial Phrase Detection -->
+        <div v-if="showInitDialog" class="modal">
+            <div class="modal-content">
+                <p>Simulate wake word detection.</p>
+                <button @click="onInitPhraseDetected">Initialize</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add this inside the <div id="app"> -->
+
+   
+    
+
+
+    <script src="main.js"></script>
+</body>
+</html>
