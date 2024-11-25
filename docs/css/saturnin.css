@@ -1,0 +1,72 @@
+/* Status Indicator Styles */
+.status-indicator {
+    width: 100%;
+    padding: 10px;
+    color: white;
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.status-indicator.disconnected {
+    background-color: red;
+}
+
+.status-indicator.waiting_wake {
+    background-color: blue;
+}
+
+.status-indicator.waiting_command {
+    background-color: green;
+}
+
+.status-indicator.executing {
+    background-color: purple;
+}
+
+/* Button Styles */
+button {
+    padding: 10px 20px;
+    margin-bottom: 20px;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+/* Input Field Styles */
+div {
+    margin-bottom: 10px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    font-size: 1em;
+}
+
+/* Modal Styles */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+}
